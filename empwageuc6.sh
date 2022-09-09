@@ -1,0 +1,30 @@
+#!/bin/bash
+
+partTime=1
+fullTime=2
+numWorkingDays=20
+wagePerHour=20
+totalEmpHour=0
+totalWorkingDays=0
+hoursInMonth=100
+
+while [[ $totalEmpHour -lt $hoursInMonth && $totalWorkingDays -lt $numWorkingDays ]]
+do
+        ((totalWorkingDays++))
+        randomCheck=$((RANDOM%3))
+
+        case $randomCheck in
+                $fullTime)
+                        fullDayHour=8;;
+                $partTime)
+                        fullDayHour=4;;
+                *)
+                        fullDayHour=0;;
+esac
+
+        totalEmpHour=$(($totalEmpHour+$fullDayHour))
+done
+	echo "$totalEmpHour"
+        
+        totalSalary=$(($totalEmpHour*$wagePerHour));
+	echo "$totalSalary"

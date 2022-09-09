@@ -1,0 +1,30 @@
+#!/bin/bash -x
+
+rand1=$((RANDOM%900+100));
+rand2=$((RANDOM%900+100));
+rand13=$((RANDOM%900+100));
+rand4=$((RANDOM%900+100));
+rand5=$((RANDOM%900+100));
+rand6=$((RANDOM%900+100));
+rand7=$((RANDOM%900+100));
+rand8=$((RANDOM%900+100));
+rand9=$((RANDOM%900+100));
+rand10=$((RANDOM%900+100));
+
+array=($rand1 $rand2 $rand3 $rand4 $rand5 $rand6 $rand7 $rand8 $rand9 $rand10)
+
+largest=${array[0]}
+
+for((i=1; i<${#array[@]}; i++))
+do
+  if [[ ${array[i]} > $largest ]]
+  then
+    secondGreatest=$largest
+    largest=${array[i]}
+  elif (( ${array[i]} != $largest )) && { [[ "$secondGreatest" = "unset" ]] || [[ ${array[i]} > $secondGreatest ]]; }
+  then
+    secondGreatest=${array[i]}
+  fi
+done
+
+echo "secondGreatest = $secondGreatest"

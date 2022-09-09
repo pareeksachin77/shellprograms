@@ -1,0 +1,9 @@
+#!/binbash -x
+
+parttime=1
+fulltime=2
+wageperhour=20
+randomcheck=$((RADNOM%3))
+
+
+case $randomcheck in

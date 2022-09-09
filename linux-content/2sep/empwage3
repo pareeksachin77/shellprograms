@@ -1,0 +1,17 @@
+#!/bin/bash -x
+
+parttime=1
+fulltime=2
+wageperhour=20
+randomcheck=$((RANDOM%3))
+
+if [ $fulltime -eq $randomcheck ]
+then
+         fulldayhour=8
+elif [$parttime -eq $randommcheck ]
+then
+          fulldayhour=4
+else
+	fulldayhour=0
+fi
+dailywage=$(($fulldayhour*$wageperhour))

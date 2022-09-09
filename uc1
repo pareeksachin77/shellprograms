@@ -1,0 +1,10 @@
+#!/bin/bash -x
+
+rand=$(($RANDOM%2))
+
+if [ $rand -eq 1 ]
+then
+echo "employee present"
+else
+echo "employee absent"
+fi

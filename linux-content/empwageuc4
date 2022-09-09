@@ -1,0 +1,17 @@
+#!/bin/bash -x
+
+fulldayhour=1
+halfdayhour=2
+randomcheck=$((RANDOM%3))
+wageperhour=20
+
+case $randomcheck in
+		$fulldayhour)
+			     fulldaywork=8;;
+		$halfdayhour)
+			     fulldaywork=4;;
+		*)
+			     fulldaywork=0;;
+esac
+
+echo employeewage=$(($fulldaywork*$wageperhour))

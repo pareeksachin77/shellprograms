@@ -1,0 +1,15 @@
+#!/bin/bash -x
+
+rand=$(($RANDOM%2))
+dailywageperhour=20
+dailyhour=8
+dailyemployeewage=$(($dailywageperhour*$dailyhour))
+
+if [ $rand -eq 1 ]
+then
+echo "employee present"
+echo $dailyemployeewage
+else
+echo "employee absent"
+echo $dailyemployeewage
+fi
